@@ -1,6 +1,6 @@
 services:
   nagadb:
-    image: ghcr.io/rimorastudio/nagadb:v0.1.2
+    image: ghcr.io/rimorastudio/nagadb:v0.1.3
     ports:
       - "4100:4100"
     environment:
@@ -11,10 +11,6 @@ services:
       NAGADB_ADMIN_PASSWORD: ${NAGADB_ADMIN_PASSWORD:-}
       SQLITE_PATH: /data/nagadb.db
       LOG_LEVEL: info
-      # optional KHQR billing checkout
-      BAKONG_ACCOUNT_ID: ${BAKONG_ACCOUNT_ID:-}
-      BAKONG_MERCHANT_NAME: ${BAKONG_MERCHANT_NAME:-}
-      BAKONG_TOKEN: ${BAKONG_TOKEN:-}
       # optional: shell command run after each backup, {file} = dump path
       # e.g. rclone copy {file} r2:nagadb-backups
       BACKUP_OFFLOAD_CMD: ${BACKUP_OFFLOAD_CMD:-}

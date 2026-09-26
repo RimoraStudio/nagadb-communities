@@ -47,14 +47,13 @@ docker run -d --name nagadb \
 - Imports (`pg_dump`/`mysqldump` pipelines, CSV/JSON uploads), on-demand + scheduled backups
 - SSH host provisioning — point it at a VM, get a managed Postgres
 - Multi-org RBAC, scoped API keys, audit log, notifications
-- Platform admin console (`/admin`) — users, orgs, billing ledger, maintenance mode
-- Optional self-serve billing via Bakong KHQR checkout
+- Platform admin console (`/admin`) — users, orgs, maintenance mode
 
 ## Configuration
 
 All configuration is via environment variables — see `.env.example` for the full
-list. Essentials: `NAGADB_SECRET_KEY` (required), `NAGADB_EDITION=community`,
-optional `BAKONG_*` for KHQR checkout and `BACKUP_OFFLOAD_CMD` for offsite backups.
+list. Essentials: `NAGADB_SECRET_KEY` (auto-generated if unset), `NAGADB_EDITION=community`,
+optional `BACKUP_OFFLOAD_CMD` for offsite backups.
 
 ## Support & license
 
