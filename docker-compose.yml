@@ -1,10 +1,11 @@
 services:
   nagadb:
-    image: ghcr.io/rimorastudio/nagadb:v0.1.0
+    image: ghcr.io/rimorastudio/nagadb:v0.1.1
     ports:
       - "4100:4100"
     environment:
-      NAGADB_SECRET_KEY: ${NAGADB_SECRET_KEY:?run: openssl rand -hex 32}
+      # optional — auto-generated and persisted in the /data volume if unset
+      NAGADB_SECRET_KEY: ${SERVICE_PASSWORD_NAGADB:-${NAGADB_SECRET_KEY:-}}
       NAGADB_EDITION: ${NAGADB_EDITION:-community}
       NAGADB_ADMIN_EMAIL: ${NAGADB_ADMIN_EMAIL:-}
       NAGADB_ADMIN_PASSWORD: ${NAGADB_ADMIN_PASSWORD:-}
