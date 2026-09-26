@@ -20,7 +20,7 @@
 ## Quickstart
 
 ```bash
-curl -O https://raw.githubusercontent.com/RimoraStudio/nagadb-communities/main/docker-compose.yml
+curl -O https://raw.githubusercontent.com/RimoraStudio/nagadb-communities/main/docker-compose.yaml
 NAGADB_SECRET_KEY=$(openssl rand -hex 32) docker compose up -d
 ```
 
