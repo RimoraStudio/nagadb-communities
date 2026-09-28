@@ -1,6 +1,6 @@
 services:
   nagadb:
-    image: ghcr.io/rimorastudio/nagadb:1.11.1
+    image: ghcr.io/rimorastudio/nagadb:1.11.2
     ports:
       - "4100:4100"
     environment:
