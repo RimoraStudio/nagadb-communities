@@ -55,6 +55,19 @@ All configuration is via environment variables — see `.env.example` for the fu
 list. Essentials: `NAGADB_SECRET_KEY` (auto-generated if unset), `NAGADB_EDITION=community`,
 optional `BACKUP_OFFLOAD_CMD` for offsite backups.
 
+Community installations check GitHub Releases for a newer stable version and show an update
+notice in the app. The check is cached and best-effort; it never installs or restarts anything.
+Set `NAGADB_UPDATE_CHECK=0` to disable it. To upgrade, review the linked release notes and
+update the Docker image using your deployment platform.
+
+## Releases
+
+The root `package.json` version is the product version and must match the release tag without
+the `v` prefix (for example, version `1.11.7` is released as tag `v1.11.7`). Update the
+workspace package versions to match, then tag and push. CI rejects a tag that doesn't match
+the root version and embeds that version in the image for the app's version display and update
+check.
+
 ## Support & license
 
 - Issues and feature requests: use GitHub Issues on this repo.
